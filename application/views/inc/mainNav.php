@@ -1,30 +1,19 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<nav class="navbar navbar-default">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="<?= site_url() ?>"><img src="<?= site_url() ?>public/images/logo.png" height="40px" width='200px' alt=""/></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="<?= site_url('About')?>"class="<?= ($this->uri->segment(1)=="About") ? "active" : ""?>">O projekcie</a></li>
+<nav class="mainnav">
+  <a class="logo" href="<?= site_url() ?>"><img src="<?= site_url() ?>public/images/logo.png" alt=""/></a>
+    <ul class="navbar-left">
+       <li><a href="<?= site_url('Event')?>"class="<?= ($this->uri->segment(1)=="Event") ? "active" : ""?>">Wydarzenia</a></li>
+    </ul>
+    <ul class="navbar-right">
       <?php if (!$this->session->is_logged): ?>
         <li><a href="<?= site_url('Register')?>" class="<?= ($this->uri->segment(1)=="Register") ? "active" : ""?>">Rejestracja</a></li>
         <li><a href="<?= site_url('Login')?>" class="<?= ($this->uri->segment(1)=="Login") ? "active" : ""?>">Logowanie</a></li>
       <?php else: ?>
-            <li>
-              <form class="logout_form" method="post">
-                <input class="logout" type="submit" value="Wyloguj">
-              </form>
-            </li>
-          </ul>
-        </div>
+        <li>
+          <form class="logout_form" method="post">
+            <input class="logout" type="submit" value="Wyloguj">
+          </form>
+        </li>
       <?php endif; ?>
     </ul>
-  </div>
 </nav>
