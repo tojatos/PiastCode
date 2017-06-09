@@ -23,7 +23,8 @@ html {
         }
 
         nav.mainnav {
-            background-color: #ffa;
+            background-color: rgba(245, 255, 162, 0.78);
+            color: rgba(0, 0, 0, 0.74);
             display: flex;
             max-height: 50px;
 
@@ -46,10 +47,23 @@ html {
                 justify-content: flex-end;
             }
             li {
-                a {
+                @mixin foo() {
+                    color: rgba(0, 0, 0, 0.74);
                     padding: 13px;
                     display: block;
-                    background-color: #534;
+                    font-size: 18px;
+                    &:hover{
+                        background-color: rgba(232, 234, 135, 0.45);
+                    }
+                    background-color: #eee;
+                    border: none;
+                    background-color: transparent;                             
+                    width: 100%;
+                    cursor: pointer;
+                    // line-height: 20px;
+                }
+                a {
+                   @include foo();
                 }
 
                 > .active {
@@ -64,18 +78,9 @@ html {
                 .logout_form{
 
                 .logout {
-                    background-color: #eee;
-                    border: none;
-                    background-color: transparent;
-                    padding: 15px;
-                    color: #fff;
-                    width: 100%;
-                    line-height: 20px;
-                    text-align: left;
+                 @include foo();
 
-                    &:hover {
-                        background-color: #3197cf;
-                    }
+
                 }
             }
         }
@@ -198,7 +203,7 @@ html {
             text-align: center;
         }
 
-        .login_form{
+        .login_form, .register_form{
             div{
                 padding: 5px;
             }
