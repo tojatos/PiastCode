@@ -88,4 +88,11 @@ $(function() {
 	sendPostDataOnSubmit('.change_password_form', 'UserPassword/ajax_changePassword', true);
 	sendPostDataOnSubmit('.create_event_form', 'Event/ajax_create_event');
 
+	/*
+	|--------------------------------------------------------------------------
+	| JqueryUI
+	|--------------------------------------------------------------------------
+	|
+	*/
+	$('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
 });
