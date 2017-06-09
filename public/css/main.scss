@@ -77,9 +77,9 @@ html {
                         background-color: #3197cf;
                     }
                 }
-                }
             }
         }
+    }
 
     .footer {
         position: absolute;
@@ -189,7 +189,33 @@ html {
             background-color: #876;
             color: #fff;
             border: 2px;
+        
 
         }
+        .title{
+            padding: 20px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .login_form{
+            div{
+                padding: 5px;
+            }
+            p{
+                font-size: 15px;
+            }
+            input{
+                height: 40px;
+                width: 200px;
+                padding: 5px;
+            }
+            
+        }
+        .forgot{
+                font-size: 16px;
+            }
+
+
     }
 }
