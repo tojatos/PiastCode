@@ -1,7 +1,7 @@
 <?php
 
 defined('BASEPATH') or exit('No direct script access allowed');
-class Event_model extends MY_Model
+class Category_model extends MY_Model
 {
     public function create_category($name)
     {
