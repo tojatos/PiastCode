@@ -23,7 +23,8 @@ html {
         }
 
         nav.mainnav {
-            background-color: #ffa;
+            background-color: rgba(245, 255, 162, 0.78);
+            color: rgba(0, 0, 0, 0.74);
             display: flex;
             max-height: 50px;
 
@@ -47,9 +48,12 @@ html {
             }
             li {
                 a {
+                    color: rgba(0, 0, 0, 0.74);
                     padding: 13px;
                     display: block;
-                    background-color: #534;
+                    &:hover{
+                        background-color: rgba(232, 234, 135, 0.45);
+                    }
                 }
 
                 > .active {
@@ -198,7 +202,7 @@ html {
             text-align: center;
         }
 
-        .login_form{
+        .login_form, .register_form{
             div{
                 padding: 5px;
             }
