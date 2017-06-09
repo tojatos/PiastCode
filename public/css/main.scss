@@ -21,69 +21,61 @@ html {
                 color: #aaa;
             }
         }
-        nav.mainnav{
+
+        nav.mainnav {
             background-color: #777;
             display: flex;
-            
-            li{
-                a {
-                    padding: 15px;
-                    line-height: 51px;
-                    background-color: #eee;
-                }
-                > .active {
-                    color: #ccc;
-                    background-color: #59cde2;
-                     &:hover {
-                    color: #fff;
-                    background-color: #61def3;
+            min-height: 50px;
 
-                     }
-                }
-                    .logout {
-                    border: none;
-                    background-color: transparent;
-                    padding: 0px;
-                    color: #fff;
-                    width: 100%;
-                    line-height: 20px;
-                    text-align: left;
-                    &:hover {
-
-                        background-color: #3197cf;
-                    }
-    }
-            }
-
-           
-            }
-        
-            .logo{
+            .logo {
                 flex-grow: 20;
                 padding: 10px;
             }
-            .navbar-left{
+
+            .navbar-left {
                 display: flex;
-                justify-content: flex-start; 
+                justify-content: flex-start;
                 flex-grow: 20;
             }
-            .navbar-right{
+
+            .navbar-right {
                 display: flex;
                 flex-grow: 60;
                 justify-content: flex-end;
             }
-                
+            li {
+                a {
+                    padding: 15px;
+                    display: block;
+                    background-color: #eee;
+                }
 
-       
+                > .active {
+                    color: #ccc;
+                    background-color: #59cde2;
 
+                    &:hover {
+                        color: #fff;
+                        background-color: #61def3;
+                    }
+                }
 
+                .logout {
+                    border: none;
+                    background-color: transparent;
+                    padding: 0;
+                    color: #fff;
+                    width: 100%;
+                    line-height: 20px;
+                    text-align: left;
 
-
+                    &:hover {
+                        background-color: #3197cf;
+                    }
+                }
+            }
+        }
     }
-
-
-
-
 
     .footer {
         position: absolute;
@@ -187,7 +179,4 @@ html {
             margin: 0 5px;
         }
     }
-
 }
-
-    
