@@ -86,5 +86,6 @@ $(function() {
 	sendPostDataOnSubmit('.register_form', 'Register/ajax_register');
 	sendPostDataOnSubmit('.forgotten_password_form', 'UserPassword/ajax_forgottenPassword', true);
 	sendPostDataOnSubmit('.change_password_form', 'UserPassword/ajax_changePassword', true);
+	sendPostDataOnSubmit('.create_event_form', 'Event/ajax_create_event');
 
 });
