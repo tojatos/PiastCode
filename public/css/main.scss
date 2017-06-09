@@ -22,6 +22,58 @@ html {
             }
         }
 
+        .event_container{
+            font-size: 18px;
+            text-align: center;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            .event{
+                width: calc(30% - 50px);
+                margin: auto;
+                padding: 10px;
+                color: #000000;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5px;
+                font-size: 0.8em;
+                display: inline-block;
+                min-height: 250px;
+                min-width: 250px;
+
+                .description{
+                    
+                }
+                .image{
+                    height: 150px;
+                    border: 1px solid #000;
+                    margin: auto;
+                }
+                .date{
+                    font-style: italic;
+                }
+                .name{
+                    font-size: 1.1em;
+                    font-weight: bold;
+                    text-transform: capitalize;
+                    border-bottom: 1px solid #fff;
+                }
+                .place{
+                    margin-top: 15px;
+                }
+
+            }
+            .teatr{
+                    background: #81aeb3;
+                }
+            .kino{
+                    background: #c1a96f;
+                }
+            .cwk{
+                    background: #8bbf88;
+                }
+        }
+
         nav.mainnav {
             background-color: #6CABBF;
             color: #555;
