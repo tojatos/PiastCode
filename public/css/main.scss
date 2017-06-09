@@ -10,7 +10,9 @@ html {
 
     body {
         margin: 0 0 60px;
-        background-color: #FFF;
+        background: url("../images/tlostrona.png");
+    background-repeat: no-repeat;
+    background-position: center center;
 
         a {
             text-decoration: none;
