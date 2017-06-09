@@ -68,11 +68,11 @@ html {
 
                 > .active {
                     color: #555;
-                    background-color: #59cde2;
+                    background-color: rgb(234, 207, 107);
 
                     &:hover {
-                        color: #fff;
-                        background-color: #3197cf;
+                        color: #333;
+                        background-color: rgb(250, 223, 123);
                     }
                 }
                 .logout_form{
@@ -95,7 +95,7 @@ html {
         height: 40px;
         margin-top: 20px;
         color: #fff;
-        background-color: #2086bf;
+        background-color: rgba(66, 148, 173, 0.78);
 
         p {
             height: 40px;
