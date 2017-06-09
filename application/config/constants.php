@@ -8,12 +8,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 */
 define('USER_TABLE', 'user');
-define('KURS_TABLE', 'kurs');
-define('ANSWER_TABLE', 'answer');
-define('QUESTION_TABLE', 'question');
-define('USER_KURS_TABLE', 'user_has_kurs');
+define('EVENT_TABLE', 'event');
+define('PLACE_TABLE', 'place');
+define('CATEGORY_TABLE', 'category');
+define('EVENT_CATEGORY_TABLE', 'event_has_category');
 define('PASS_CHANGE_REQUEST_TABLE', 'password_change_requests');
-define('TRESHOLD', 80);
+
+define('MAIN_MAIL', 'noreply@piastcode');
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace

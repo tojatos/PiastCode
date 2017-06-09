@@ -10,7 +10,7 @@ class Verify extends MY_Controller
             $not_verified_emails = $this->Verify_model->get_not_verified_emails();
             if ($not_verified_emails == null) {
                 throw new Exception("Wszyscy użytkownicy są już zweryfikowani!
-                <p><a class='btn btn-primary btn-lg' href='/Login'>Zaloguj</a></p>");
+                <p><a href='".site_url('Login')."'>Zaloguj</a></p>");
             }
             $email = $this->Verify_model->get_email_to_verify($not_verified_emails, $code);
             if ($email == null) {
@@ -18,7 +18,7 @@ class Verify extends MY_Controller
             }
             $try = $this->Verify_model->verify($email);
             $this->showMessage("Pomyślnie zweryfikowano, możesz się już zalogować.
-            <p><a class='btn btn-primary btn-lg' href='/Login'>Zaloguj</a></p>");
+            <p><a href='".site_url('Login')."'</a></p>");
         } catch (Exception $e) {
             $this->showMessage($e->getMessage());
         }
