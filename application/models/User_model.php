@@ -6,7 +6,7 @@ class User_model extends MY_Model
     /**
      * Wkłada nowego użytkownika do bazy danych.
      *
-     * @param [array] $user_data powinna zawierać klucze 'login', 'password', 'email', 'city'
+     * @param [array] $user_data powinna zawierać klucze 'login', 'password', 'email'
      */
     public function create_user($user_data)
     {
@@ -18,7 +18,6 @@ class User_model extends MY_Model
               'password' => password_hash($user_data['password'], PASSWORD_DEFAULT),
               'email' => $user_data['email'],
               'verified' => false,
-              'city' => $user_data['city'],
             ];
             $this->db->insert(USER_TABLE, $insert_data);
         } catch (Exception $e) {

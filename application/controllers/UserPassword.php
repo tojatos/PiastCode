@@ -48,9 +48,9 @@ class UserPassword extends MY_Controller
       $this->load->library('email');
       $config['mailtype'] = 'html';
       $this->email->initialize($config);
-      $this->email->from('noreply@mlodyratownik', 'Password changer');
+      $this->email->from(MAIN_MAIL, 'Password changer');
       $this->email->to($email);
-      $this->email->subject('Młody ratownik - Prośba o zmianę hasła');
+      $this->email->subject('Piast Code - Prośba o zmianę hasła');
       $this->email->message('
       <h1>Zmiana hasła</h1>
       Możesz zmienić swoje hasło klikając w <a href="'.site_url('ChangePassword/').$code.'">ten link</a>.<br><br>

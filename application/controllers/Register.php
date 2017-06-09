@@ -17,7 +17,6 @@ class Register extends MY_Controller
               'login' => $this->input->post('login'),
               'password' => $this->input->post('password'),
               'password_repeat' => $this->input->post('password_repeat'),
-              'city' => $this->input->post('city'),
             ];
             $this->validate_ajax_register($post_data);
 
@@ -26,7 +25,6 @@ class Register extends MY_Controller
               'login' => $post_data['login'],
               'password' => $post_data['password'],
               'email' => $post_data['email'],
-              'city' => $post_data['city'],
             ];
             $try = $this->User_model->create_user($user_data);
 
@@ -50,7 +48,6 @@ class Register extends MY_Controller
         'login' => [$d['login'], 50],
         'hasło' => [$d['password'], 50],
         'potwierdzenie hasła' => [$d['password_repeat'], 50],
-        'miejscowość' => [$d['city'], 50],
         ]);
 
         if (!valid_email($d['email'])) {
@@ -66,9 +63,9 @@ class Register extends MY_Controller
         $this->load->library('email');
         $config['mailtype'] = 'html';
         $this->email->initialize($config);
-        $this->email->from('noreply@mlodyratownik', 'Verifier');
+        $this->email->from(MAIN_MAIL, 'Verifier');
         $this->email->to($email);
-        $this->email->subject('Młody ratownik - Weryfikacja');
+        $this->email->subject('Piast Code - Weryfikacja');
         $this->email->message('
       <h1>Witamy nowego użytkownika!</h1>
       Możesz potwierdzić swoją rejestrację klikając w <a href="'.site_url('Verify/').sha1($email).'">ten link</a>.<br><br>
