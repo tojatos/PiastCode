@@ -23,13 +23,13 @@ html {
         }
 
         nav.mainnav {
-            background-color: rgba(66, 148, 173, 0.78);
-            color: rgba(0, 0, 0, 0.74);
+            background-color: #6CABBF;
+            color: #555;
             display: flex;
             max-height: 50px;
 
             .logo {
-                flex-grow: 20;
+                flex-grow: 1;
                 img{
                     height: 50px;
                 }
@@ -48,7 +48,7 @@ html {
             }
             li {
                 @mixin foo() {
-                    color: rgba(0, 0, 0, 0.74);
+                    color: #555;
                     padding: 14px;
                     display: block;
                     font-size: 18px;
@@ -95,7 +95,7 @@ html {
         height: 40px;
         margin-top: 20px;
         color: #fff;
-        background-color: rgba(66, 148, 173, 0.78);
+        background-color: #6CABBF;
 
         p {
             height: 40px;
