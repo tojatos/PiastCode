@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="row main">
 				<div class="panel-heading">
-	               <div class="panel-title text-center">
+	               <div class="text-center">
 	               		<h1 class="title">Logowanie</h1>
 	               		<hr />
 	               	</div>
@@ -32,7 +32,7 @@
 						</div>
 
 						<div class="form-group ">
-							<div><input class="btn btn-primary btn-lg btn-block login-button" type="submit" value="Zaloguj"></div>
+							<div><input class="button-primary" type="submit" value="Zaloguj"></div>
 						</div>
             </form>
 				            <a href="<?= site_url('ForgottenPassword') ?>" class="center">Nie pamiętam hasła</a>
