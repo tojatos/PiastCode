@@ -67,23 +67,4 @@ class Event extends MY_Controller
         ]);
 
     }
-    public function sendVerifyEmail($email)
-    {
-        $this->load->library('email');
-        $config['mailtype'] = 'html';
-        $this->email->initialize($config);
-        $this->email->from(MAIN_MAIL, 'Verifier');
-        $this->email->to($email);
-        $this->email->subject('Piast Code - Weryfikacja');
-        $this->email->message('
-      <h1>Witamy nowego użytkownika!</h1>
-      Możesz potwierdzić swoją rejestrację klikając w <a href="'.site_url('Verify/').sha1($email).'">ten link</a>.<br><br>
-      Jeżeli nie rejestrowałeś się na '.base_url().' zignoruj tę wiadomość.
-      ');
-        $this->email->send();
-    }
-    // public function test()
-    // {
-    //   $this->sendVerifyEmail('tojatos@gmail.com');
-    // }
 }

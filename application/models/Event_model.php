@@ -23,24 +23,5 @@ class Event_model extends MY_Model
             return $e->getMessage();
         }
     }
-    public function get_user_id($username)
-    {
-        $event_data = $this->db->get_where(USER_TABLE, array('login' => $username), 1);
-        if ($event_data->result() != null) {
-            return $event_data->result()[0]->id_user;
-        } else {
-            throw new Exception('Błąd w wyciąganiu ID użytkownika. Skontaktuj się z administratorem.');
-
-            return null;
-        }
-    }
-    public function user_exists($id_user)
-    {
-        $event_data = $this->db->get_where(USER_TABLE, array('id_user' => $id_user), 1);
-        if ($event_data->result() != null) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+  
 }
