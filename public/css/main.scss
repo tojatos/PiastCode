@@ -23,7 +23,7 @@ html {
         }
 
         nav.mainnav {
-            background-color: rgba(245, 255, 162, 0.78);
+            background-color: rgba(66, 148, 173, 0.78);
             color: rgba(0, 0, 0, 0.74);
             display: flex;
             max-height: 50px;
@@ -49,11 +49,11 @@ html {
             li {
                 @mixin foo() {
                     color: rgba(0, 0, 0, 0.74);
-                    padding: 13px;
+                    padding: 14px;
                     display: block;
                     font-size: 18px;
                     &:hover{
-                        background-color: rgba(232, 234, 135, 0.45);
+                        background-color: rgba(91, 139, 173, 0.81);
                     }
                     background-color: #eee;
                     border: none;
