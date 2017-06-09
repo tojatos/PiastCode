@@ -24,11 +24,43 @@ html {
         nav.mainnav{
             background-color: #777;
             display: flex;
+            
             li{
-                padding: 10px;
+                a {
+                    padding: 15px;
+                    line-height: 51px;
+                    background-color: #eee;
+                }
+                > .active {
+                    color: #ccc;
+                    background-color: #59cde2;
+                     &:hover {
+                    color: #fff;
+                    background-color: #61def3;
+
+                     }
+                }
+                    .logout {
+                    border: none;
+                    background-color: transparent;
+                    padding: 0px;
+                    color: #fff;
+                    width: 100%;
+                    line-height: 20px;
+                    text-align: left;
+                    &:hover {
+
+                        background-color: #3197cf;
+                    }
+    }
             }
+
+           
+            }
+        
             .logo{
                 flex-grow: 20;
+                padding: 10px;
             }
             .navbar-left{
                 display: flex;
@@ -42,46 +74,14 @@ html {
             }
                 
 
-        li > .active {
-            color: #ccc;
-            background-color: #59cde2;
-
-            &:hover {
-                color: #fff !important;
-                background-color: #61def3 !important;
-            }
-        }
+       
 
 
-    .mainnav > li > a {
-        color: #fff;
 
-        .mainnav > li > a:hover {
-            color: #eee;
-            background-color: #61def3;
-        }
+
     }
 
-    .logout {
-        border: none;
-        background-color: transparent;
-        padding: 0px;
-        color: #fff;
-        width: 100%;
-        line-height: 20px;
-        text-align: left;
-    }
 
-    .logout:hover {
-        background-color: #3197cf;
-    }
-
-    .mainnav > li > a:hover {
-        color: #eee;
-        background-color: #3197cf;
-    }
-        }
-    }
 
 
 
