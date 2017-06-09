@@ -23,13 +23,15 @@ html {
         }
 
         nav.mainnav {
-            background-color: #777;
+            background-color: #ffa;
             display: flex;
-            min-height: 50px;
+            max-height: 50px;
 
             .logo {
                 flex-grow: 20;
-                padding: 10px;
+                img{
+                    height: 50px;
+                }
             }
 
             .navbar-left {
@@ -45,25 +47,27 @@ html {
             }
             li {
                 a {
-                    padding: 15px;
+                    padding: 13px;
                     display: block;
-                    background-color: #eee;
+                    background-color: #534;
                 }
 
                 > .active {
-                    color: #ccc;
+                    color: #555;
                     background-color: #59cde2;
 
                     &:hover {
                         color: #fff;
-                        background-color: #61def3;
+                        background-color: #3197cf;
                     }
                 }
+                .logout_form{
 
                 .logout {
+                    background-color: #eee;
                     border: none;
                     background-color: transparent;
-                    padding: 0;
+                    padding: 15px;
                     color: #fff;
                     width: 100%;
                     line-height: 20px;
@@ -73,9 +77,9 @@ html {
                         background-color: #3197cf;
                     }
                 }
+                }
             }
         }
-    }
 
     .footer {
         position: absolute;
@@ -177,6 +181,15 @@ html {
             width: 50px;
             height: 50px;
             margin: 0 5px;
+        }
+
+        
+    }
+    .button-primary{
+            background-color: #876;
+            color: #fff;
+            border: 2px;
+
         }
     }
 }
