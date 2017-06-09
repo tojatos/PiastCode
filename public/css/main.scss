@@ -101,7 +101,7 @@ html {
             li {
                 @mixin foo() {
                     color: #555;
-                    padding: 14px;
+                    padding: 14.5px;
                     display: block;
                     font-size: 18px;
                     &:hover{
