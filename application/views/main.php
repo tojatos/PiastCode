@@ -15,7 +15,7 @@
 
 <div style="clear:both"></div>
 
-<div class="event_container">
+<div class="main_container">
 
   <?php foreach ($events_data as $event): ?>
     <a href="<?= site_url('Event/').$event->event_id ?>">
