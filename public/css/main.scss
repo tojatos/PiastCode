@@ -80,8 +80,11 @@ html {
             color: #555;
             display: flex;
             max-height: 50px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
 
             .logo {
+                padding-left: 10px;
                 flex-grow: 1;
                 img{
                     height: 50px;
@@ -150,6 +153,8 @@ html {
         margin-top: 20px;
         color: #555;
         background-color: #6CABBF;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
 
         p {
             height: 40px;
