@@ -7,8 +7,8 @@
 	               		<hr />
 	               	</div>
 	            </div>
-				<div class="col-lg-4 col-lg-offset-5 col-md-4 col-md-offset-5
-							col-sm-6 col-sm-offset-4 col-xs-6 col-xs-offset-4">
+				<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4
+							col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
           <form class="register_form" method="post">
 						<div class="form-group">
               			<p>Login</p>
