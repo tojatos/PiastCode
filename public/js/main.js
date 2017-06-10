@@ -97,3 +97,17 @@ $(function() {
 	*/
 	$('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
 });
+/*
+|--------------------------------------------------------------------------
+| Hamburger
+|--------------------------------------------------------------------------
+|
+*/
+
+$(function(){
+$('#hamburger').on('click', function(){
+	$(this).toggleClass('open');
+	$('.navbar-left').slideToggle();
+	$('.navbar-right').slideToggle();
+});
+});

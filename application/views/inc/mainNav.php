@@ -1,9 +1,15 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <nav class="mainnav">
   <a class="logo" href="<?= site_url() ?>"><img src="<?= site_url() ?>public/images/logo.png" alt=""/></a>
+  <div id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <ul class="navbar-left">
     <?php if ($this->session->is_logged): ?>
-     <li><a href="<?= site_url('Event/Create')?>"class="<?= ($this->uri->segment(1)=="Event") ? "active" : ""?>">Dodawanie wydarzenia</a></li>
+     <li><a href="<?= site_url('Event/Create')?>"class="<?= ($this->uri->segment(1)=="Event"&&$this->uri->segment(2)=="Create") ? "active" : ""?>">Dodawanie wydarzenia</a></li>
         <?php if ($this->session->is_admin): ?>
             <li><a href="<?= site_url('Administrator')?>"class="<?= ($this->uri->segment(1)=="Administrator") ? "active" : ""?>">Panel Administratora</a></li>
         <?php endif; ?>
