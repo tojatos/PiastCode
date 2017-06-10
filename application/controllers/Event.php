@@ -16,7 +16,7 @@ class Event extends MY_Controller
         $event_data = $this->Event_model->get_event_data($id);
         if($event_data==null)
         {
-          throw new Exception("Nie ma takiego wydarzenia!");
+          throw new Exception("<p><b>Nie ma takiego wydarzenia!</b></p> <a href='".site_url()."'>Wróć do strony głównej</a>");
 
         }
         $data['event'] = $event_data;

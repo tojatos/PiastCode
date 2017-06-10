@@ -413,11 +413,18 @@ html {
     .left_admin{
         margin: 2%;
         padding: 20px;
-        width: 50%;
+        width: 30%;
         display: inline-block;
     }
     .right_admin{
         display: inline-block;
-        width: 40%;
+        width: 60%;
         margin: 2%;
     }
+
+
+.message{
+    padding: 20px;
+    color: #811;
+    font-size: 24px;
+}
