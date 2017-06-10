@@ -37,7 +37,7 @@
 				</div>
 
 				<div class="form-group">
-              		<p>Wybierz miejsce</p>
+              		<p>Wybierz miejsce:</p>
 						<select name="place_id" placeholder="Wybierz miejsce wydarzenia z listy">
 							<?php foreach ($places as $place): ?>
   							<option value="<?= $place->id_place ?>"><?= $place->name ?></option>
