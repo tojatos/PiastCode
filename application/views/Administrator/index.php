@@ -18,7 +18,7 @@
         <p>Nie ma żadnych wydarzeń do zweryfikowania</p>
         <?php else: ?>
         <p>Zweryfikuj wydarzenia</p>
-				
+
         <?php foreach ($events_data as $event): ?>
             <a href="<?= site_url('Event/').$event->event_id ?>">
             <div class="event teatr">

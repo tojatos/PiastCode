@@ -36,7 +36,7 @@ class Main extends MY_Controller
         if($filter_date!=null)
         {
           foreach ($data['events_data'] as $key => $event) {
-            if (date_format(date_create($event->event_datetime_end), 'd.m.Y') != date_format(date_create($filter_date), 'd.m.Y')) {
+            if (date_format(date_create($event->event_datetime_start), 'd.m.Y') > date_format(date_create($filter_date), 'd.m.Y')||date_format(date_create($event->event_datetime_end), 'd.m.Y') < date_format(date_create($filter_date), 'd.m.Y')) {
                 unset($data['events_data'][$key]);
             }
           }
