@@ -50,9 +50,6 @@ function sendPostData(data, url) {
 		url: baseUrl + url,
 		type: 'POST',
 		data: data,
-		cache: false,
-			 contentType: false,
-			 processData: false,
 		success: function(serverResponse, refresh) {
 			showResponse(serverResponse, refresh);
 		},
