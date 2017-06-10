@@ -11,9 +11,21 @@ class Event extends MY_Controller
     }
     public function show_single_event($id)
     {
-      $view['mainNav'] = $this->loadMainNav();
-      $view['content'] = $this->loadContent('Event/single_event');
-      $this->showMainView($view);
+      try{
+        $this->load->model('Event_model');
+        $event_data = $this->Event_model->get_event_data($id);
+        if($event_data==null)
+        {
+          throw new Exception("Nie ma takiego wydarzenia!");
+
+        }
+        $data['event'] = $event_data;
+        $view['mainNav'] = $this->loadMainNav();
+        $view['content'] = $this->loadContent('Event/single_event', $data);
+        $this->showMainView($view);
+      } catch (Exception $e) {
+           $this->showMessage($e->getMessage());
+      }
     }
     public function create_event_form()
     {
