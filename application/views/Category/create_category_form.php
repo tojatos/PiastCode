@@ -1,4 +1,5 @@
 <form class="create_category_form" type="POST">
-	Nazwa: <input type="text" name="name">
-	<input type="submit" value="Wyślij mnie">
+	<p>Nazwa:</p> 
+	<input type="text" name="name">
+	<input type="submit" class="button-primary" value="Wyślij mnie">
 </form>

@@ -304,7 +304,7 @@ html {
             text-align: center;
         }
 
-        .login_form, .register_form, .create_event_form{
+        .login_form, .register_form, .create_event_form, .create_category_form{
             div{
                 padding: 5px;
             }
@@ -409,3 +409,15 @@ html {
   width: 0%;
   left: 50%;
 }
+
+    .left_admin{
+        margin: 2%;
+        padding: 20px;
+        width: 50%;
+        display: inline-block;
+    }
+    .right_admin{
+        display: inline-block;
+        width: 40%;
+        margin: 2%;
+    }
