@@ -30,13 +30,11 @@ html {
             margin-left: auto;
             margin-right: auto;
             .event{
+                
                 width: calc(30% - 50px);
-                margin: auto;
+                margin: 10px;;
                 padding: 10px;
                 color: #000000;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 5px;
                 font-size: 0.8em;
                 display: inline-block;
                 min-height: 250px;
@@ -253,7 +251,9 @@ html {
             background-color: #876;
             color: #fff;
             border: 2px;
-        
+            height: 40px;
+            cursor: pointer;
+            font-size: 18px;
 
         }
         .title{
@@ -262,7 +262,7 @@ html {
             text-align: center;
         }
 
-        .login_form, .register_form{
+        .login_form, .register_form, .create_event_form{
             div{
                 padding: 5px;
             }
@@ -279,7 +279,9 @@ html {
         .forgot{
                 font-size: 16px;
             }
-
+        .text{
+            font-size: 15px;
+        }
 
     }
 }

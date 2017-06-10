@@ -10,7 +10,7 @@
 	            </div>
 				<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2
 							col-sm-9 col-sm-offset-2 col-xs-9 col-xs-offset-1">
-          <form class="login_form" method="post">
+          <form class="create_event_form" method="post">
 				<div class="form-group">
               		<p>Nazwa:</p>
 						<input type="text" name="name" placeholder="Wpisz nazwę"/>
