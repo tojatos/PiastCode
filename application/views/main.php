@@ -1,6 +1,21 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 
+<div class="event_filter">
+    <div class="title">Filtruj:</div>
+    <div class="formula">
+        <form action="/action_page.php">
+            <input type="checkbox" name="vehicle" value="Bike"> Kino
+            <input type="checkbox" name="vehicle" value="Car" checked> Teatr
+            <input type="checkbox" name="vehicle" value="Car" checked> Sport
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</div>
+
+<div style="clear:both"></div>
+
 <div class="event_container">
     
   <?php foreach ($events_data as $event): ?>

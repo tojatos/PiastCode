@@ -22,6 +22,26 @@ html {
                 color: #aaa;
             }
         }
+        
+        .event_filter{
+            background: #FFD42A;
+            text-align: center;
+            
+            .title{
+                display: inline-block;
+                font-size: 0.8em;
+                text-transform: uppercase;
+                font-weight: bold;
+                
+            }
+            .formula{
+                display: inline-block;
+                font-size: 0.83em;
+                margin-top: 20px;
+            }
+        }
+        
+        
         .event_offer{
             font-size: 20px;
             margin-top: 20px;
