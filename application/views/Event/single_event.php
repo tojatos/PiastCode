@@ -9,13 +9,13 @@
         <div class="place">Miejsce: <?= $event->place_name ?>, <?= $event->place_address ?></div>
         <div class="content"><?= $event->event_description ?></div>
         <iframe
-                width="600"
+                width="100%b"
                 height="450"
                 frameborder="0" style="margin-left: auto;
     margin-right: auto;
     display: block;border:0"
                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDgP6HlTeeOXBilAy2d94efiaN0LcLtpI
-                &q= <?= $event->place_name ?>, <?= $event->place_address ?>,Opole" allowfullscreen>
+                &q= <?= $event->place_address ?>,Opole" allowfullscreen>
         </iframe>
         
     </div>
