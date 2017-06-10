@@ -23,5 +23,9 @@ class Event_model extends MY_Model
             return $e->getMessage();
         }
     }
-  
+    public function get_events_data()
+    {
+      $this->db->get(EVENT_TABLE);
+    }
+
 }
