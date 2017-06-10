@@ -171,7 +171,7 @@ html {
             width: 75%;
             margin-left: auto;
             margin-right: auto;
-            display: flex;
+            display: block;
             
             .event{
 
@@ -230,6 +230,71 @@ html {
                 }
         }
         
+                .admin_container{
+            font-size: 18px;
+            text-align: center;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            
+            .event{
+
+                width: calc(30% - 50px);
+                margin: 10px;;
+                padding: 10px;
+                color: #000000;
+                font-size: 0.8em;
+                display: inline-block;
+                min-height: 250px;
+                min-width: 250px;
+
+                .description{
+
+                }
+                img {
+                    height: 100%;
+                }               
+                .image{
+                    height: 150px;
+                    border: 1px solid #000;
+                    margin: auto;
+                }
+                .date{
+                    font-style: italic;
+                }
+                .name{
+                    font-size: 1.1em;
+                    font-weight: bold;
+                    text-transform: capitalize;
+                    border-bottom: 1px solid #fff;
+                }
+                .place{
+                    margin-top: 15px;
+                }
+
+            }
+                .left_admin{
+                    margin: 2%;
+                    padding: 20px;
+                    width: 30%;
+                    
+                }
+                .right_admin{
+                    width: 60%;
+                    margin: 2%;
+                }
+            .teatr{
+                    background: #A694DD;
+                }
+            .kino{
+                    background: #9db735;
+                }
+            .cwk{
+                    background: #FADE51;
+                }
+        }
+
         nav.mainnav {
             background-color: #6CABBF;
             color: #555;

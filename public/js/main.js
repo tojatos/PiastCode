@@ -129,5 +129,7 @@ $('.select_places').on('click', function(){
 		}
 	});
 });
-$('.select_categories').chosen();
+$('.select_categories').chosen({
+	placeholder_text_multiple: "Wybierz kategorie"
+});
 });
