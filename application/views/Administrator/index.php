@@ -4,7 +4,7 @@
 	               		<hr />
 	               	</div>
 </div>
-<div class="event_container">
+<div class="admin_container">
     <div class="left_admin">
         <p>Dodaj kategorię</p>
         <?= $create_category_form ?>

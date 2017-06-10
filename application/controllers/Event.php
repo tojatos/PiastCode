@@ -30,8 +30,10 @@ class Event extends MY_Controller
     public function create_event_form()
     {
         $this->load->model("Place_model");
+        $this->load->model("Category_model");
         $places = $this->Place_model->get_places();
         $data['select_places'] = $this->loadContent('Place/select_places', ['places' => $places]);
+        $data['categories'] = $this->Category_model->get_categories();
         $data['create_place_form'] = $this->loadContent('Place/create_place_form');
         $view['content'] = $this->loadContent('Event/create_event_form', $data);
         $view['mainNav'] = $this->loadMainNav();
@@ -48,6 +50,7 @@ class Event extends MY_Controller
               'date_end' => $this->input->post('date_end'),
               'time_end' => $this->input->post('time_end'),
               'place_id' => $this->input->post('place_id'),
+              'category_ids' => $this->input->post('category_ids[]'),
             ];
             $this->validate_ajax_create_event($post_data);
 
@@ -62,6 +65,7 @@ class Event extends MY_Controller
               'date_end' => $post_data['date_end'],
               'time_end' => $post_data['time_end'],
               'place_id' => $post_data['place_id'],
+              'category_ids' => $post_data['category_ids'],
               'creator' => $user_id,
             ];
             $try = $this->Event_model->create_event($event_data);

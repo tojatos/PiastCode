@@ -9,8 +9,9 @@ class Event_model extends MY_Model
             //$this->validate_event_data($event_data);
             $datetime_start = $event_data['date_start'].' '.$event_data['time_start'];
             $datetime_end = $event_data['date_end'].' '.$event_data['time_end'];
+            $id_event = $this->get_next_id(EVENT_TABLE);
             $insert_data = [
-              'id_'.EVENT_TABLE => $this->get_next_id(EVENT_TABLE),
+              'id_'.EVENT_TABLE => $id_event,
               'name' => $event_data['name'],
               'description' => $event_data['description'],
               'datetime_start' => $datetime_start,
@@ -19,6 +20,19 @@ class Event_model extends MY_Model
               'fk_place' => $event_data['place_id'],
             ];
             $this->db->insert(EVENT_TABLE, $insert_data);
+            $category_ids = $event_data['category_ids'];
+            if($category_ids!=null)
+            {
+              foreach ($category_ids as $category_id)
+              {
+                $insert_cat_data = [
+                  'id_'.EVENT_CATEGORY_TABLE => $this->get_next_id(EVENT_CATEGORY_TABLE),
+                  'fk_'.EVENT_TABLE => $id_event,
+                  'fk_'.CATEGORY_TABLE => $category_id
+                ];
+                $this->db->insert(EVENT_CATEGORY_TABLE, $insert_cat_data);
+              }
+            }
         } catch (Exception $e) {
             return $e->getMessage();
         }
@@ -32,6 +46,7 @@ class Event_model extends MY_Model
           EVENT_TABLE.'.description as event_description,'.
           EVENT_TABLE.'.datetime_start as event_datetime_start,'.
           EVENT_TABLE.'.datetime_end as event_datetime_end,'.
+          EVENT_TABLE.'.verified as event_verified,'.
           PLACE_TABLE.'.name as place_name,'.
           PLACE_TABLE.'.address as place_address,'.
           CATEGORY_TABLE.'.name as category_name,'
@@ -60,6 +75,7 @@ class Event_model extends MY_Model
           EVENT_TABLE.'.description as event_description,'.
           EVENT_TABLE.'.datetime_start as event_datetime_start,'.
           EVENT_TABLE.'.datetime_end as event_datetime_end,'.
+          EVENT_TABLE.'.verified as event_verified,'.
           PLACE_TABLE.'.name as place_name,'.
           PLACE_TABLE.'.address as place_address,'.
           CATEGORY_TABLE.'.name as category_name,'
@@ -116,7 +132,7 @@ class Event_model extends MY_Model
         }
     }
 
-      
+
 
     public function verify_event($id_event){
       $this->db->where(['id_event' => $id_event])
