@@ -10,9 +10,11 @@ html {
 
     body {
         margin: 0 0 60px;
-        background: url("../images/tlostrona.png");
-    background-repeat: no-repeat;
-    background-position: center center;
+        background: url("../images/vintage-leaves.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center top;
+    background-size: 100% auto;
 
         a {
             text-decoration: none;
@@ -66,13 +68,13 @@ html {
 
             }
             .teatr{
-                    background: #81aeb3;
+                    background: rgba(129, 174, 179, 0.7);
                 }
             .kino{
-                    background: #c1a96f;
+                    background: rgba(193, 169, 111, 0.7);
                 }
             .cwk{
-                    background: #8bbf88;
+                    background: rgba(139, 191, 136, 0.7);
                 }
         }
 
