@@ -22,7 +22,34 @@ html {
                 color: #aaa;
             }
         }
-
+        .event_offer{
+            font-size: 20px;
+            margin-top: 20px;
+            .title{
+                background: #6CABBF;
+                text-transform: uppercase;
+                font-weight: bold;
+                
+            }
+            .image img{
+                margin: auto;
+                display: block;
+            }
+            .date, .place{
+                background: #FF6600;
+                float: left;
+                width: 50%;
+                text-align: center;
+            }
+            .content{
+                padding: 30px;
+                width: 100%;
+                background: #dddddd;
+                color: #000000;
+                
+            }
+            
+        }
         .event_container{
             font-size: 18px;
             text-align: center;
@@ -72,6 +99,7 @@ html {
                     background: #FADE51;
                 }
         }
+        
         nav.mainnav {
             background-color: #6CABBF;
             color: #555;
