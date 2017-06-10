@@ -7,7 +7,7 @@
             <?php foreach ($categories as $category): ?>
                 <input type="checkbox" name="category[]" value="<?=$category->name ?>"> <?=$category->name ?>
             <?php endforeach; ?>
-            <input class="datepicker date_filter" name="date"> Data
+            <input class="datepicker date_filter" name="date" placeholder="Data">
             <input type="submit" class="button-filter" value="Filtruj">
         </form>
 

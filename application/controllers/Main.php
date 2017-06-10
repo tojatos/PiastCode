@@ -6,6 +6,7 @@ class Main extends MY_Controller
     public function index()
     {
         $filter_categories = $this->input->get('category[]');
+        $filter_date = $this->input->get('date');
         $this->load->model('Event_model');
         $this->load->model('Category_model');
         $data['events_data'] = $this->Event_model->get_events_data();
@@ -17,14 +18,26 @@ class Main extends MY_Controller
               unset($data['events_data'][$key]);
             }
             else {
+              $test = false;
               foreach ($event->category as $ev_cat) {
                 foreach ($filter_categories as $cat) {
-                if($cat!=$ev_cat){
-                  unset($data['events_data'][$key]);
-                  break;
+                if($cat==$ev_cat){
+                  $test = true;
                   }
                 }
+                }
+                if($test==false){
+                  unset($data['events_data'][$key]);
+                  break;
               }
+            }
+          }
+        }
+        if($filter_date!=null)
+        {
+          foreach ($data['events_data'] as $key => $event) {
+            if (date_format(date_create($event->event_datetime_end), 'd.m.Y') != date_format(date_create($filter_date), 'd.m.Y')) {
+                unset($data['events_data'][$key]);
             }
           }
         }
