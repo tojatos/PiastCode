@@ -248,12 +248,15 @@ html {
         
     }
     .button-primary{
-            background-color: #876;
-            color: #fff;
+            background-color: #EACF6B;
+            color: #555;
             border: 2px;
             height: 40px;
             cursor: pointer;
             font-size: 18px;
+            &:hover{
+                background-color: #FADF7B;
+            }
 
         }
         .title{
