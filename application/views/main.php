@@ -15,7 +15,7 @@
 
 <div style="clear:both"></div>
 
-<div class="event_container">
+<div class="main_container">
   <?php
   if ($events_data != null) {
     foreach ($events_data as $key => $event) {
