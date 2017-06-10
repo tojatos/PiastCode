@@ -51,7 +51,8 @@ class Event_model extends MY_Model
         ->from(EVENT_TABLE)
         ->join(PLACE_TABLE, PLACE_TABLE.".id_".PLACE_TABLE." = ".EVENT_TABLE.".fk_".PLACE_TABLE,'left')
         ->join(EVENT_CATEGORY_TABLE, EVENT_TABLE.".id_".EVENT_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".EVENT_TABLE,'left')
-        ->join(CATEGORY_TABLE, CATEGORY_TABLE.".id_".CATEGORY_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".CATEGORY_TABLE,'left');
+        ->join(CATEGORY_TABLE, CATEGORY_TABLE.".id_".CATEGORY_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".CATEGORY_TABLE,'left'
+        ->where(CATEGORY_TABLE."name" = $category OR EVENT_TABLE."datetime_start" = $datetime));
         $events_data = $this->db->get();
         if($events_data==null)
         {

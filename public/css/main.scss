@@ -94,9 +94,8 @@ html {
             display: block;
             .event{
 
-                width: calc(30% - 50px);
-                margin: 10px;;
-                padding: 10px;
+                width: calc(30% - 30px);
+                margin: 10px;
                 color: #000000;
                 font-size: 0.8em;
                 display: inline-block;
@@ -111,17 +110,19 @@ html {
                 }               
                 .image{
                     height: 150px;
-                    border: 1px solid #000;
                     margin: auto;
                 }
                 .date{
                     font-style: italic;
                 }
                 .name{
-                    font-size: 1.1em;
+                    font-size: 1.5em;
                     font-weight: bold;
                     text-transform: capitalize;
                     border-bottom: 1px solid #fff;
+                    color: #fff;
+                    background: cadetblue;
+                    padding: 5px;
                 }
                 .place{
                     margin-top: 15px;
