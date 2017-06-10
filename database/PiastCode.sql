@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 09, 2017 at 09:46 PM
+-- Generation Time: Jun 10, 2017 at 03:47 AM
 -- Server version: 5.7.18-0ubuntu0.16.04.1-log
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -31,6 +31,14 @@ CREATE TABLE `category` (
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id_category`, `name`) VALUES
+(1, 'CWK'),
+(2, 'Kappa');
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +54,14 @@ CREATE TABLE `event` (
   `fk_user_creator` int(11) NOT NULL,
   `fk_place` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`id_event`, `name`, `description`, `datetime_start`, `datetime_end`, `fk_user_creator`, `fk_place`) VALUES
+(4, 'PiastCode', 'programowanie', '2016-12-21 09:00:00', '2016-12-23 18:00:00', 1, 1),
+(5, 'Zbieranie ziemniaków', 'Kappa', '2017-06-10 06:00:00', '2017-06-16 09:37:00', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -82,6 +98,13 @@ CREATE TABLE `place` (
   `description` varchar(1000) DEFAULT NULL,
   `address` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `place`
+--
+
+INSERT INTO `place` (`id_place`, `name`, `description`, `address`) VALUES
+(1, 'CWK', 'centrum', 'Wrocławska 6/2');
 
 -- --------------------------------------------------------
 
