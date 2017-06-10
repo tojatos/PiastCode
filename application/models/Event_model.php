@@ -45,14 +45,10 @@ class Event_model extends MY_Model
           EVENT_TABLE.'.datetime_end as event_datetime_end,'.
           EVENT_TABLE.'.verified as event_verified,'.
           PLACE_TABLE.'.name as place_name,'.
-          PLACE_TABLE.'.address as place_address,'.
-          CATEGORY_TABLE.'.name as category_name,'
+          PLACE_TABLE.'.address as place_address,'
         )
         ->from(EVENT_TABLE)
-        ->join(PLACE_TABLE, PLACE_TABLE.".id_".PLACE_TABLE." = ".EVENT_TABLE.".fk_".PLACE_TABLE,'left')
-        ->join(EVENT_CATEGORY_TABLE, EVENT_TABLE.".id_".EVENT_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".EVENT_TABLE,'left')
-        ->join(CATEGORY_TABLE, CATEGORY_TABLE.".id_".CATEGORY_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".CATEGORY_TABLE,'left'
-        ->where(CATEGORY_TABLE."name" = $category OR EVENT_TABLE."datetime_start" = $datetime));
+        ->join(PLACE_TABLE, PLACE_TABLE.".id_".PLACE_TABLE." = ".EVENT_TABLE.".fk_".PLACE_TABLE,'left');
         $events_data = $this->db->get();
         if($events_data==null)
         {
@@ -60,12 +56,27 @@ class Event_model extends MY_Model
         }
         else
         {
+          $this->db
+          ->select(EVENT_CATEGORY_TABLE.".fk_".EVENT_TABLE.','.CATEGORY_TABLE.'.name as category_name')
+          ->from(EVENT_CATEGORY_TABLE)
+          ->join(CATEGORY_TABLE, CATEGORY_TABLE.".id_".CATEGORY_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".CATEGORY_TABLE,'left');
+          $event_category_data = $this->db->get()->result();
+          foreach ($events_data->result() as $event) {
+            $event->category = [];
+            foreach ($event_category_data as $e_c) {
+              if($event->event_id==$e_c->fk_event)
+              {
+                array_push($event->category, $e_c->category_name);
+              }
+            }
+          }
           return $events_data->result();
         }
 
     }
     public function get_event_data($event_id)
     {
+
         $this->db
         ->select(
           EVENT_TABLE.'.id_'.EVENT_TABLE.' as event_id,'.
@@ -75,50 +86,11 @@ class Event_model extends MY_Model
           EVENT_TABLE.'.datetime_end as event_datetime_end,'.
           EVENT_TABLE.'.verified as event_verified,'.
           PLACE_TABLE.'.name as place_name,'.
-          PLACE_TABLE.'.address as place_address,'.
-          CATEGORY_TABLE.'.name as category_name,'
+          PLACE_TABLE.'.address as place_address,'
         )
         ->from(EVENT_TABLE)
         ->join(PLACE_TABLE, PLACE_TABLE.".id_".PLACE_TABLE." = ".EVENT_TABLE.".fk_".PLACE_TABLE,'left')
-        ->join(EVENT_CATEGORY_TABLE, EVENT_TABLE.".id_".EVENT_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".EVENT_TABLE,'left')
-        ->join(CATEGORY_TABLE, CATEGORY_TABLE.".id_".CATEGORY_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".CATEGORY_TABLE,'left')
-        ->where(['id_'.EVENT_TABLE => $event_id]);
-        $event_data = $this->db->get();
-        if($event_data==null)
-        {
-          return false;
-        }
-        else
-        {
-          if($event_data->result()==null)
-          {
-            return null;
-          }
-          else
-          {
-            return $event_data->result()[0];
-          }
-        }
-
-    }
-
-    public function get_event_verified(){
-       $this->db
-        ->select(
-          EVENT_TABLE.'.id_'.EVENT_TABLE.' as event_id,'.
-          EVENT_TABLE.'.name as event_name,'.
-          EVENT_TABLE.'.description as event_description,'.
-          EVENT_TABLE.'.datetime_start as event_datetime_start,'.
-          EVENT_TABLE.'.datetime_end as event_datetime_end,'.
-          PLACE_TABLE.'.name as place_name,'.
-          PLACE_TABLE.'.address as place_address,'.
-          CATEGORY_TABLE.'.name as category_name,'
-        )
-        ->from(EVENT_TABLE)
-        ->join(PLACE_TABLE, PLACE_TABLE.".id_".PLACE_TABLE." = ".EVENT_TABLE.".fk_".PLACE_TABLE,'left')
-        ->join(EVENT_CATEGORY_TABLE, EVENT_TABLE.".id_".EVENT_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".EVENT_TABLE,'left')
-        ->join(CATEGORY_TABLE, CATEGORY_TABLE.".id_".CATEGORY_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".CATEGORY_TABLE,'left')
-        ->where(['verified' => 0]);
+        ->where(['id_'.EVENT_TABLE => $event_id]);;
         $events_data = $this->db->get();
         if($events_data==null)
         {
@@ -126,8 +98,65 @@ class Event_model extends MY_Model
         }
         else
         {
-          return $events_data->result();
+          $this->db
+          ->select(EVENT_CATEGORY_TABLE.".fk_".EVENT_TABLE.','.CATEGORY_TABLE.'.name as category_name')
+          ->from(EVENT_CATEGORY_TABLE)
+          ->join(CATEGORY_TABLE, CATEGORY_TABLE.".id_".CATEGORY_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".CATEGORY_TABLE,'left')
+          ->where([EVENT_CATEGORY_TABLE.".fk_".EVENT_TABLE => $event_id]);
+          $event_category_data = $this->db->get()->result();
+          foreach ($events_data->result() as $event) {
+            $event->category = [];
+            foreach ($event_category_data as $e_c) {
+              if($event->event_id==$e_c->fk_event)
+              {
+                array_push($event->category, $e_c->category_name);
+              }
+            }
+          }
+          return $events_data->result()[0];
         }
+
+    }
+
+    public function get_event_unverified(){
+      $this->db
+      ->select(
+        EVENT_TABLE.'.id_'.EVENT_TABLE.' as event_id,'.
+        EVENT_TABLE.'.name as event_name,'.
+        EVENT_TABLE.'.description as event_description,'.
+        EVENT_TABLE.'.datetime_start as event_datetime_start,'.
+        EVENT_TABLE.'.datetime_end as event_datetime_end,'.
+        EVENT_TABLE.'.verified as event_verified,'.
+        PLACE_TABLE.'.name as place_name,'.
+        PLACE_TABLE.'.address as place_address,'
+      )
+      ->from(EVENT_TABLE)
+      ->join(PLACE_TABLE, PLACE_TABLE.".id_".PLACE_TABLE." = ".EVENT_TABLE.".fk_".PLACE_TABLE,'left')
+      ->where(['verified' => 0]);
+      $events_data = $this->db->get();
+      if($events_data==null)
+      {
+        return false;
+      }
+      else
+      {
+        $this->db
+        ->select(EVENT_CATEGORY_TABLE.".fk_".EVENT_TABLE.','.CATEGORY_TABLE.'.name as category_name')
+        ->from(EVENT_CATEGORY_TABLE)
+        ->join(CATEGORY_TABLE, CATEGORY_TABLE.".id_".CATEGORY_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".CATEGORY_TABLE,'left');
+        $event_category_data = $this->db->get()->result();
+        foreach ($events_data->result() as $event) {
+          $event->category = [];
+          foreach ($event_category_data as $e_c) {
+            if($event->event_id==$e_c->fk_event)
+            {
+              array_push($event->category, $e_c->category_name);
+            }
+          }
+        }
+        return $events_data->result();
+      }
+
     }
 
 

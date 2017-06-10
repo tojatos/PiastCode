@@ -18,7 +18,7 @@
         <p>Nie ma żadnych wydarzeń do zweryfikowania</p>
         <?php else: ?>
         <p>Zweryfikuj wydarzenia</p>
-        
+				
         <?php foreach ($events_data as $event): ?>
             <a href="<?= site_url('Event/').$event->event_id ?>">
             <div class="event teatr">
@@ -29,16 +29,27 @@
                     <div class="short-info">rozpoczęcie o <?= date_format(date_create($event->event_datetime_start), 'H:i'); ?></div>
                 </div>
                 <div class="image">
-                    <img src="<?= site_url("public/images/kappa.png") ?>" />
+									<img src="
+									<?php
+									if(file_exists('public/images/events/event'.$event->event_id.'.jpeg'))
+									{
+											echo site_url('public/images/events/event'.$event->event_id.'.jpeg');
+									}
+									else
+									{
+											echo site_url('public/images/kappa.png');
+									}
+									?>
+									"/>
                 </div>
                 <form class="verify_event_form" method="post">
-                    <input value="<?=$event->event_id ?>" name="event_id" type="hidden">
+                    <input value="<?= $event->event_id ?>" name="event_id" type="hidden">
                     <input class="button-primary" type="submit" value="Zaakceptuj wydarzenie">
                 </form>
             </div>
-            
+
         </a>
-  <?php endforeach; ?>
+  		<?php endforeach; ?>
   <?php endif; ?>
     </div>
 </div>

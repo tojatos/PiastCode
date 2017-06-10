@@ -2,7 +2,19 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 <div class="event_offer">
-    <div class="image"><img src="<?= site_url("/public/images/zbieranie_ziemniakow.jpg") ?>"/></div>
+    <div class="image">
+      <img src="
+      <?php if(file_exists('public/images/events/event'.$event->event_id.'.jpeg'))
+      {
+          echo site_url('public/images/events/event'.$event->event_id.'.jpeg');
+      }
+      else
+      {
+          echo site_url('public/images/zbieranie_ziemniakow.jpg');
+      }
+      ?>
+      "/>
+      </div>
     <div class="event_container">
         <div class="title"><?= $event->event_name ?></div>
         <div class="date">Czas trwania: Od <?= date_format(date_create($event->event_datetime_start), 'd.m.Y G:i') ?> do <?= date_format(date_create($event->event_datetime_end), 'd.m.Y G:i') ?></div>
@@ -17,6 +29,6 @@
                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDgP6HlTeeOXBilAy2d94efiaN0LcLtpI
                 &q=<?= $event->place_address ?>,Opole" allowfullscreen>
         </iframe>
-        
+
     </div>
 </div>

@@ -10,7 +10,7 @@
             <input class="datepicker date_filter"> Data
             <input type="submit" class="button-filter" value="Filtruj">
         </form>
-        
+
     </div>
 
 </div>
@@ -37,7 +37,17 @@
                 <div class="short-info">rozpoczęcie o <?= date_format(date_create($event->event_datetime_start), 'H:i'); ?></div>
             </div>
             <div class="image">
-                <img src="<?= site_url("public/images/kappa.png") ?>" />
+              <img src="
+              <?php if(file_exists('public/images/events/event'.$event->event_id.'.jpeg'))
+              {
+                  echo site_url('public/images/events/event'.$event->event_id.'.jpeg');
+              }
+              else
+              {
+                  echo site_url('public/images/kappa.png');
+              }
+              ?>
+              "/>
             </div>
         </div>
     </a>
