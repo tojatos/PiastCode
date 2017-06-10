@@ -2,13 +2,12 @@
 
 
 <div class="event_filter">
-    <div class="title">Filtruj:</div>
     <div class="formula">
         <form action="">
             <?php foreach ($categories as $category): ?>
                 <input type="checkbox" name="category" value="<?=$category->name ?>"> <?=$category->name ?>
             <?php endforeach; ?>
-            <input type="submit" value="Submit">
+            <input type="submit" class="button-filter" value="Filtruj">
         </form>
     </div>
 

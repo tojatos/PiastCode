@@ -55,6 +55,7 @@ html {
         .event_filter{
             background: #FFD42A;
             text-align: center;
+            height: 40px;
             
             .title{
                 display: inline-block;
@@ -66,7 +67,7 @@ html {
             .formula{
                 display: inline-block;
                 font-size: 0.83em;
-                margin-top: 20px;
+                margin-top: 5px;
             }
         }
         .event_offer{
@@ -483,4 +484,13 @@ html {
 .add_place_form_toggle{
     margin: 0 auto;
     display: block;
+}
+
+.button-filter{
+    background-color: #6CABBF;
+    color: #555;
+    border: 2px #000;
+    font-size: 18px;
+    height: 30px;
+    padding: 5px;
 }

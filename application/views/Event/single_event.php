@@ -15,7 +15,7 @@
     margin-right: auto;
     display: block;border:0"
                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDgP6HlTeeOXBilAy2d94efiaN0LcLtpI
-                &q= <?= $event->place_address ?>,Opole" allowfullscreen>
+                &q=<?= $event->place_address ?>,Opole" allowfullscreen>
         </iframe>
         
     </div>

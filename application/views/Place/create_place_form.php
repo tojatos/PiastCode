@@ -25,7 +25,7 @@
 				</div>
 
 				<div class="form-group ">
-					<input class="button-primary" type="submit" value="Wyślij">
+					<input class="button-primary" type="submit" value="Dodaj miejsce">
 				</div>
             </form>
 				</div>
