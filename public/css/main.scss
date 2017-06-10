@@ -41,7 +41,7 @@ html {
                 min-width: 250px;
 
                 .description{
-                    
+
                 }
                 .image{
                     height: 150px;
@@ -110,7 +110,7 @@ html {
                     }
                     background-color: #eee;
                     border: none;
-                    background-color: transparent;                             
+                    background-color: transparent;
                     width: 100%;
                     cursor: pointer;
                     height: 50px;
@@ -244,18 +244,14 @@ html {
             margin: 0 5px;
         }
 
-        
+
     }
     .button-primary{
             background-color: #EACF6B;
             color: #555;
             border: 2px;
-            height: 40px;
-            cursor: pointer;
             font-size: 18px;
-            &:hover{
-                background-color: #FADF7B;
-            }
+
 
         }
         .title{
@@ -276,7 +272,7 @@ html {
                 width: 100%;
                 padding: 5px;
             }
-            
+
         }
         .forgot{
                 font-size: 16px;
