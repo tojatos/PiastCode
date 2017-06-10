@@ -114,6 +114,7 @@ html {
                 }
                 .date{
                     font-style: italic;
+                    width: 100%;
                 }
                 .name{
                     font-size: 1.5em;
@@ -186,9 +187,7 @@ html {
                 display: block;
             }
             .date, .place{
-                background: #FF6600;
-                float: left;
-                width: 50%;
+                background: #EACF6B;
                 text-align: center;
             }
             .content{
@@ -552,6 +551,7 @@ html {
         }
         .title{
             padding: 20px;
+            width: 100%;
             font-size: 28px;
             text-align: center;
         }
@@ -686,4 +686,10 @@ html {
     font-size: 18px;
     height: 30px;
     padding: 5px;
+}
+
+.follow{
+    width: 100px;
+    height: 20px;
+    border: 4px black;
 }
