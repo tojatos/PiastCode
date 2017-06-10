@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if (!$this->session->is_logged): ?>
+<?php if ($this->session->is_logged): ?>
 		<div class="container">
 			<div class="row main">
 				<div class="panel-heading">
