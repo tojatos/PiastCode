@@ -2,7 +2,9 @@
 <nav class="mainnav">
   <a class="logo" href="<?= site_url() ?>"><img src="<?= site_url() ?>public/images/logo.png" alt=""/></a>
   <ul class="navbar-left">
+    <?php if ($this->session->is_logged): ?>
      <li><a href="<?= site_url('Event/Create')?>"class="<?= ($this->uri->segment(1)=="Event") ? "active" : ""?>">Dodawanie wydarzenia</a></li>
+     <?php endif; ?>
   </ul>
   <ul class="navbar-right">
     <?php if (!$this->session->is_logged): ?>
