@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 10, 2017 at 04:57 AM
--- Server version: 5.7.18-0ubuntu0.16.04.1-log
--- PHP Version: 7.0.15-0ubuntu0.16.04.4
+-- Host: 127.0.0.1
+-- Czas generowania: 10 Cze 2017, 08:33
+-- Wersja serwera: 10.1.21-MariaDB
+-- Wersja PHP: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `PiastCode`
+-- Baza danych: `piastcode`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Struktura tabeli dla tabeli `category`
 --
 
 CREATE TABLE `category` (
@@ -32,7 +32,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `category`
+-- Zrzut danych tabeli `category`
 --
 
 INSERT INTO `category` (`id_category`, `name`) VALUES
@@ -42,7 +42,7 @@ INSERT INTO `category` (`id_category`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event`
+-- Struktura tabeli dla tabeli `event`
 --
 
 CREATE TABLE `event` (
@@ -51,22 +51,23 @@ CREATE TABLE `event` (
   `description` varchar(1000) NOT NULL,
   `datetime_start` datetime NOT NULL,
   `datetime_end` datetime NOT NULL,
+  `verified` tinyint(1) NOT NULL DEFAULT '0',
   `fk_user_creator` int(11) NOT NULL,
   `fk_place` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `event`
+-- Zrzut danych tabeli `event`
 --
 
-INSERT INTO `event` (`id_event`, `name`, `description`, `datetime_start`, `datetime_end`, `fk_user_creator`, `fk_place`) VALUES
-(4, 'PiastCode', 'programowanie', '2016-12-21 09:00:00', '2016-12-23 18:00:00', 1, 1),
-(5, 'Zbieranie ziemniaków', 'Kappa', '2017-06-10 06:00:00', '2017-06-16 09:37:00', 1, 1);
+INSERT INTO `event` (`id_event`, `name`, `description`, `datetime_start`, `datetime_end`, `verified`, `fk_user_creator`, `fk_place`) VALUES
+(4, 'PiastCode', 'programowanie', '2016-12-21 09:00:00', '2016-12-23 18:00:00', 1, 1, 1),
+(5, 'Zbieranie ziemniaków', 'Kappa', '2017-06-10 06:00:00', '2017-06-16 09:37:00', 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event_has_category`
+-- Struktura tabeli dla tabeli `event_has_category`
 --
 
 CREATE TABLE `event_has_category` (
@@ -77,7 +78,7 @@ CREATE TABLE `event_has_category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_change_requests`
+-- Struktura tabeli dla tabeli `password_change_requests`
 --
 
 CREATE TABLE `password_change_requests` (
@@ -89,7 +90,7 @@ CREATE TABLE `password_change_requests` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `place`
+-- Struktura tabeli dla tabeli `place`
 --
 
 CREATE TABLE `place` (
@@ -100,16 +101,17 @@ CREATE TABLE `place` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `place`
+-- Zrzut danych tabeli `place`
 --
 
 INSERT INTO `place` (`id_place`, `name`, `description`, `address`) VALUES
-(1, 'CWK', 'centrum', 'Wrocławska 6/2');
+(1, 'CWK', 'centrum', 'Wrocławska 6/2'),
+(2, 'solaris', 'jakiś opis', 'kamienna 2');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktura tabeli dla tabeli `user`
 --
 
 CREATE TABLE `user` (
@@ -122,14 +124,14 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user`
+-- Zrzut danych tabeli `user`
 --
 
 INSERT INTO `user` (`id_user`, `login`, `password`, `email`, `verified`, `is_admin`) VALUES
 (1, 'admin', 0x243279243130245a4d4542356d3448537a34675077767968496957564f3461614d38477761614c42436b766f6758706a335a44754c36434d52584243, 'admin@admin.pl', 1, 1);
 
 --
--- Indexes for dumped tables
+-- Indeksy dla zrzutów tabel
 --
 
 --
@@ -173,18 +175,18 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Constraints for dumped tables
+-- Ograniczenia dla zrzutów tabel
 --
 
 --
--- Constraints for table `event`
+-- Ograniczenia dla tabeli `event`
 --
 ALTER TABLE `event`
   ADD CONSTRAINT `fk_event_place1` FOREIGN KEY (`fk_place`) REFERENCES `place` (`id_place`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_event_user1` FOREIGN KEY (`fk_user_creator`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `event_has_category`
+-- Ograniczenia dla tabeli `event_has_category`
 --
 ALTER TABLE `event_has_category`
   ADD CONSTRAINT `fk_event_has_category_category1` FOREIGN KEY (`fk_category`) REFERENCES `category` (`id_category`) ON DELETE NO ACTION ON UPDATE NO ACTION,
