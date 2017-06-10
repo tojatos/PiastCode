@@ -23,7 +23,6 @@ html {
             }
         }
         .event_offer{
-            border: 1px solid #000000;
             font-size: 20px;
             margin-top: 20px;
             .title{
@@ -32,6 +31,24 @@ html {
                 font-weight: bold;
                 
             }
+            .image img{
+                margin: auto;
+                display: block;
+            }
+            .date, .place{
+                background: #FF6600;
+                float: left;
+                width: 50%;
+                text-align: center;
+            }
+            .content{
+                padding: 30px;
+                width: 100%;
+                background: #dddddd;
+                color: #000000;
+                
+            }
+            
         }
         .event_container{
             font-size: 18px;
