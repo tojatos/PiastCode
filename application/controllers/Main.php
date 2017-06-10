@@ -6,7 +6,9 @@ class Main extends MY_Controller
     public function index()
     {
         $this->load->model('Event_model');
+        $this->load->model('Category_model');
         $data['events_data'] = $this->Event_model->get_events_data();
+        $data['categories'] = $this->Category_model->get_categories();
         $view['content'] = $this->loadContent('main', $data);
         $view['mainNav'] = $this->loadMainNav();
         $this->showMainView($view);

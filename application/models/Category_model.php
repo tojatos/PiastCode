@@ -15,4 +15,9 @@ class Category_model extends MY_Model
             return $e->getMessage();
         }
     }
+    public function get_categories()
+    {
+      $categories = $this->db->get(CATEGORY_TABLE)->result();
+      return $categories;
+    }
 }

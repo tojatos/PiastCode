@@ -5,8 +5,8 @@
     <div class="title">Filtruj:</div>
     <div class="formula">
         <form action="">
-            <?php foreach ($category_data as $category): ?>
-                <input type="checkbox" name="category" value="<?=$category?>"> <?=$category=?>
+            <?php foreach ($categories as $category): ?>
+                <input type="checkbox" name="category" value="<?=$category->name ?>"> <?=$category->name ?>
             <?php endforeach; ?>
             <input type="submit" value="Submit">
         </form>
@@ -17,7 +17,7 @@
 <div style="clear:both"></div>
 
 <div class="event_container">
-    
+
   <?php foreach ($events_data as $event): ?>
     <a href="<?= site_url('Event/').$event->event_id ?>">
         <div class="event teatr">
