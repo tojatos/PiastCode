@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 10, 2017 at 03:47 AM
+-- Generation Time: Jun 10, 2017 at 04:57 AM
 -- Server version: 5.7.18-0ubuntu0.16.04.1-log
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -117,15 +117,16 @@ CREATE TABLE `user` (
   `login` varchar(50) NOT NULL,
   `password` binary(60) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `verified` tinyint(1) NOT NULL
+  `verified` tinyint(1) NOT NULL,
+  `is_admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `login`, `password`, `email`, `verified`) VALUES
-(1, 'admin', 0x243279243130245a4d4542356d3448537a34675077767968496957564f3461614d38477761614c42436b766f6758706a335a44754c36434d52584243, 'admin@admin.pl', 1);
+INSERT INTO `user` (`id_user`, `login`, `password`, `email`, `verified`, `is_admin`) VALUES
+(1, 'admin', 0x243279243130245a4d4542356d3448537a34675077767968496957564f3461614d38477761614c42436b766f6758706a335a44754c36434d52584243, 'admin@admin.pl', 1, 1);
 
 --
 -- Indexes for dumped tables
