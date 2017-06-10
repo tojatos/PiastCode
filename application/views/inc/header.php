@@ -4,9 +4,11 @@
   <head>
     <link rel="stylesheet" href="<?= site_url('public/css/main.css') ?>">
     <link rel="stylesheet" href="<?= site_url('public/jquery-ui/jquery-ui.min.css') ?>">
+    <link rel="stylesheet" href="<?= site_url('public/ChosenJS/chosen.min.css') ?>">
     <link href="<?= site_url('public/images/favico.ico') ?>" rel="shortcut icon" type="image/icon" />
     <script src="<?= site_url('public/js/jquery-3.1.1.min.js') ?>"></script>
     <script src="<?= site_url('public/jquery-ui/jquery-ui.min.js') ?>"></script>
+    <script src="<?= site_url('public/ChosenJS/chosen.jquery.min.js') ?>"></script>
     <script src="<?= site_url('public/js/main.js') ?>"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

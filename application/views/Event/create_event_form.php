@@ -38,9 +38,12 @@
 
 				<div class="form-group">
               		<p>Wybierz miejsce:</p>
-						<select name="place_id" placeholder="Wybierz miejsce wydarzenia z listy" class="select_places">
-							<?= $select_places ?>
-						</select>
+					<select name="place_id" placeholder="Wybierz miejsce wydarzenia z listy" class="select_places">
+						<?= $select_places ?>
+					</select>
+					<select name="category_ids[]" multiple placeholder="Wybierz kategorie z listy" class="select_categories">
+						<?= $select_places ?>
+					</select>
 				</div>
 				<div class="form-group ">
 					<input class="button-primary" type="submit" value="Wyślij">
@@ -48,7 +51,7 @@
             </form>
 				</div>
 			</div>
-		
+
 		<button type="button" class="add_place_form_toggle button-primary">Dodaj miejsce</button>
 		<div  id="add_place_form"><?= $create_place_form ?></div>
 		</div>
