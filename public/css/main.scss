@@ -24,6 +24,14 @@ html {
         }
         .event_offer{
             border: 1px solid #000000;
+            font-size: 20px;
+            margin-top: 20px;
+            .title{
+                background: #6CABBF;
+                text-transform: uppercase;
+                font-weight: bold;
+                
+            }
         }
         .event_container{
             font-size: 18px;
