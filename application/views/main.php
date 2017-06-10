@@ -2,6 +2,7 @@
 
 
 <div class="event_container">
+    
   <?php foreach ($events_data as $event): ?>
     <a href="<?= site_url('Event/').$event->event_id ?>">
         <div class="event teatr">
