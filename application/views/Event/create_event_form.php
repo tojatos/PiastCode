@@ -41,8 +41,11 @@
 					<select name="place_id" placeholder="Wybierz miejsce wydarzenia z listy" class="select_places">
 						<?= $select_places ?>
 					</select>
+	              <p>Wybierz kategorie (opcjonalnie):</p>
 					<select name="category_ids[]" multiple placeholder="Wybierz kategorie z listy" class="select_categories">
-						<?= $select_places ?>
+						<?php foreach ($categories as $category): ?>
+							<option value="<?= $category->id_category ?>"><?= $category->name ?></option>
+						<?php endforeach; ?>
 					</select>
 				</div>
 				<div class="form-group ">
