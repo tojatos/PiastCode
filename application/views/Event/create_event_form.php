@@ -52,7 +52,7 @@
 				</div>
 			</div>
 
-		<button type="button" class="add_place_form_toggle button-primary">Dodaj miejsce</button>
+		<button type="button" class="add_place_form_toggle button-primary">Nie ma mojego miejsca na liście</button>
 		<div  id="add_place_form"><?= $create_place_form ?></div>
 		</div>
 <?php
