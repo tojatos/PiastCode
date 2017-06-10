@@ -48,6 +48,10 @@
 						<?php endforeach; ?>
 					</select>
 				</div>
+				<div class="form-group">
+              		<p>Zdjęcie wydarzenia:</p>
+						<input type="file" name="pic" accept="image/*">
+				</div>
 				<div class="form-group ">
 					<input class="button-primary" type="submit" value="Dodaj wydarzenie">
 				</div>
