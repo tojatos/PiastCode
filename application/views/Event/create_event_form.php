@@ -38,11 +38,10 @@
 
 				<div class="form-group">
               		<p>Wybierz miejsce</p>
-						<select name="place_id" placeholder="Wybierz miejsce wydarzenia z listy">
-							<?php foreach ($places as $place): ?>
-  							<option value="<?= $place->id_place ?>"><?= $place->name ?></option>
-							<?php endforeach; ?>
-						</select>
+									<select name="place_id" placeholder="Wybierz miejsce wydarzenia z listy" class="select_places">
+						<?= $select_places ?>
+
+					</select>
 				</div>
 				<div class="form-group ">
 					<input class="button-primary" type="submit" value="Wyślij">

@@ -97,6 +97,7 @@ $(function() {
 	|
 	*/
 	$('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+
 });
 /*
 |--------------------------------------------------------------------------
@@ -110,5 +111,15 @@ $('#hamburger').on('click', function(){
 	$(this).toggleClass('open');
 	$('.navbar-left').slideToggle();
 	$('.navbar-right').slideToggle();
+});
+});
+$(function(){
+$('.select_places').on('click', function(){
+	$.get(baseUrl + 'Place/get_select_places', function (data) {
+		if($('.select_places').html()!=data)
+		{
+			$('.select_places').html(data);
+		}
+	});
 });
 });

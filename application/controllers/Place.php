@@ -35,4 +35,10 @@ class Place extends MY_Controller
         ]);
 
     }
+    public function get_select_places()
+    {
+      $this->load->model('Place_model');
+      $places = $this->Place_model->get_places();
+      echo $this->loadContent('Place/select_places', ['places' => $places]);
+    }
 }
