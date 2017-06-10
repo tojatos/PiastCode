@@ -103,7 +103,7 @@ html {
             li {
                 @mixin foo() {
                     color: #555;
-                    padding: 14.5px;
+                    padding: 15px;
                     display: block;
                     font-size: 18px;
                     &:hover{
@@ -114,7 +114,8 @@ html {
                     background-color: transparent;                             
                     width: 100%;
                     cursor: pointer;
-                    // line-height: 20px;
+                    height: 50px;
+                    line-height: 18px;
                 }
                 a {
                    @include foo();
@@ -266,7 +267,7 @@ html {
             }
             input{
                 height: 40px;
-                width: 200px;
+                width: 100%;
                 padding: 5px;
             }
             
