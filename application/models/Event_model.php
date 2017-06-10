@@ -25,7 +25,12 @@ class Event_model extends MY_Model
             {
               foreach ($category_ids as $category_id)
               {
-                $this->db->insert(EVENT_CATEGORY_TABLE, ['fk_'.EVENT_TABLE => $id_event, 'fk_'.CATEGORY_TABLE => $category_id]);
+                $insert_cat_data = [
+                  'id_'.EVENT_CATEGORY_TABLE => $this->get_next_id(EVENT_CATEGORY_TABLE),
+                  'fk_'.EVENT_TABLE => $id_event,
+                  'fk_'.CATEGORY_TABLE => $category_id
+                ];
+                $this->db->insert(EVENT_CATEGORY_TABLE, $insert_cat_data);
               }
             }
         } catch (Exception $e) {
