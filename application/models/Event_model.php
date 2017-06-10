@@ -88,4 +88,38 @@ class Event_model extends MY_Model
 
     }
 
+    public function get_event_verified(){
+       $this->db
+        ->select(
+          EVENT_TABLE.'.id_'.EVENT_TABLE.' as event_id,'.
+          EVENT_TABLE.'.name as event_name,'.
+          EVENT_TABLE.'.description as event_description,'.
+          EVENT_TABLE.'.datetime_start as event_datetime_start,'.
+          EVENT_TABLE.'.datetime_end as event_datetime_end,'.
+          PLACE_TABLE.'.name as place_name,'.
+          PLACE_TABLE.'.address as place_address,'.
+          CATEGORY_TABLE.'.name as category_name,'
+        )
+        ->from(EVENT_TABLE)
+        ->join(PLACE_TABLE, PLACE_TABLE.".id_".PLACE_TABLE." = ".EVENT_TABLE.".fk_".PLACE_TABLE,'left')
+        ->join(EVENT_CATEGORY_TABLE, EVENT_TABLE.".id_".EVENT_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".EVENT_TABLE,'left')
+        ->join(CATEGORY_TABLE, CATEGORY_TABLE.".id_".CATEGORY_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".CATEGORY_TABLE,'left')
+        ->where(['verified' => 0]);
+        $events_data = $this->db->get();
+        if($events_data==null)
+        {
+          return false;
+        }
+        else
+        {
+          return $events_data->result();
+        }
+    }
+
+      
+
+    public function verify_event($id_event){
+      $this->db->where(['id_event' => $id_event])
+      ->update(EVENT_TABLE, ['verified' => 1]);
+    }
 }
