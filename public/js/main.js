@@ -113,3 +113,12 @@ $('#hamburger').on('click', function(){
 	$('.navbar-right').slideToggle();
 });
 });
+
+
+
+
+$(function(){
+$('.add_place_form_toggle').on('click', function(){
+	$('#add_place_form').slideToggle();
+});
+});

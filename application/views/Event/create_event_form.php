@@ -9,7 +9,7 @@
 	               	</div>
 	            </div>
 				<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2
-							col-sm-9 col-sm-offset-2 col-xs-9 col-xs-offset-1">
+							col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
           <form class="create_event_form" method="post">
 				<div class="form-group">
               		<p>Nazwa:</p>
@@ -50,8 +50,10 @@
             </form>
 				</div>
 			</div>
+		
+		<button type="button" class="add_place_form_toggle button-primary">Dodaj miejsce</button>
+		<div  id="add_place_form"><?= $create_place_form ?></div>
 		</div>
-		<?= $create_place_form ?>
 <?php
   else:
     header('Location: '.base_url());
