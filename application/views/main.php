@@ -3,7 +3,7 @@
 
 <div class="event_filter">
     <div class="formula">
-        <form action="">
+        <form class="filter" method="post">
             <?php foreach ($categories as $category): ?>
                 <input type="checkbox" name="category" value="<?=$category->name ?>"> <?=$category->name ?>
             <?php endforeach; ?>
