@@ -154,7 +154,7 @@ html {
         .event_filter{
             background: #FFD42A;
             text-align: center;
-            height: 40px;
+            min-height: 40px;
             
             .title{
                 display: inline-block;
@@ -170,6 +170,7 @@ html {
                 .date_filter{
                     width: 80px;
                 }
+            
             }
         }
         .event_offer{
