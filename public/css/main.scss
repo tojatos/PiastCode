@@ -23,6 +23,35 @@ html {
             }
         }
         
+        .userdata{
+            background: #FFD42A;
+            text-align: center;
+        }
+        
+        .userlog{
+            width: 75%;
+            border: 1px solid #ddddff;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+            padding: 20px;
+            text-align: center;
+            
+            .logtitle{
+                font-size: 1.67em;
+                background: #118434;
+                color: #ffffff
+                    
+            }
+            
+            .logelement{
+                border: 1px solid #118434;
+                padding: 1px;
+                margin-top: 5px;
+            }
+        }
+        
+        
         .event_filter{
             background: #FFD42A;
             text-align: center;
@@ -40,8 +69,6 @@ html {
                 margin-top: 20px;
             }
         }
-        
-        
         .event_offer{
             font-size: 20px;
             margin-top: 20px;
