@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 10 Cze 2017, 08:33
+-- Czas generowania: 10 Cze 2017, 09:08
 -- Wersja serwera: 10.1.21-MariaDB
 -- Wersja PHP: 7.1.1
 
@@ -36,8 +36,12 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id_category`, `name`) VALUES
+(0, 'kino'),
 (1, 'CWK'),
-(2, 'Kappa');
+(2, 'Kappa'),
+(3, 'teatr'),
+(4, 'festiwal'),
+(5, 'koncert');
 
 -- --------------------------------------------------------
 
