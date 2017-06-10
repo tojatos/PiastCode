@@ -49,7 +49,7 @@
 					</select>
 				</div>
 				<div class="form-group">
-              		<p>Zdjęcie wydarzenia:</p>
+              		<p>Zdjęcie wydarzenia (opcjonalnie):</p>
 						<input type="file" name="pic" >
 				</div>
 				<div class="form-group ">

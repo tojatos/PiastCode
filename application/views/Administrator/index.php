@@ -1,3 +1,7 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php if (!$this->session->is_admin): ?>
+<?php header("Location: ".site_url()); ?>
+<?php endif; ?>
 <div class="panel-heading">
 	               <div class="text-center">
 	               		<h1 class="title">Panel Administratora</h1>

@@ -64,13 +64,18 @@ html {
                 padding: 20px;
                 text-align: center;
                 float: none;
+                font-size: 0.8em;
                 
             }
             
             .logtitle{
                 font-size: 1.67em;
                 background: #118434;
-                color: #ffffff
+                color: #ffffff;
+                    @media screen and (max-width: 949px) {
+                    font-size: 1em;
+                        
+                    }
                     
             }
             
@@ -260,17 +265,25 @@ html {
         }
         
                 .admin_container{
-            font-size: 18px;
-            text-align: center;
-            width: 75%;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
+                    font-size: 18px;
+                    text-align: center;
+                    width: 90%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                    
+                    @media all and(max-width: 1024px){
+                        width: 100%;
+                    }
+                    @media all and(max-width: 600px){
+                        display: block;
+                        text-align: center;
+                    }
             
             .event{
 
                 width: calc(30% - 50px);
-                margin: 10px;;
+                margin: 10px;
                 padding: 10px;
                 color: #000000;
                 font-size: 0.8em;
@@ -304,14 +317,31 @@ html {
 
             }
                 .left_admin{
-                    margin: 2%;
+                    margin: 2% 0 0 50px;
                     padding: 20px;
-                    width: 30%;
+                    width: 280px;
+                    
+                    @media screen and(max-width: 1024px){
+                        margin: 2% 0 0 0;
+                        
+                    }
+                    @media screen and(max-width: 600px){
+                        display: inline-block;
+                        width: 100%;
+                    }
                     
                 }
                 .right_admin{
-                    width: 60%;
+                    width: calc(100% - 390px);
                     margin: 2%;
+                    
+                        @media screen and(max-width: 1024px){
+                            width: calc(100% - 340px);
+                        }
+                        @media screen and(max-width: 600px){
+                                display: inline-block;
+                                width: 100%;
+                        }
                 }
             .teatr{
                     background: #A694DD;
