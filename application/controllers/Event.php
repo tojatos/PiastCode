@@ -67,4 +67,10 @@ class Event extends MY_Controller
         ]);
 
     }
+    public function get_events_data()
+    {
+      $this->load->model->Event_model;
+      $events_data = $this->Event_model->get_events_data();
+      return $events_data;
+    }
 }

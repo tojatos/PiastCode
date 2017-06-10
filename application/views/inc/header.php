@@ -15,4 +15,4 @@
   <body>
   <div class="blur"></div>
   <div class="loading"></div>
-  <div class="response"><div class="text"></div><button class="accept-response">Rozumiem</button></div>
+  <div class="response"><div class="text"></div><button class="accept-response button-primary">Rozumiem</button></div>
