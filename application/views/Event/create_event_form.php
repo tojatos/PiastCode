@@ -35,10 +35,14 @@
               		<p>Godzina zakończenia:</p>
 						<input type="text" name="time_end" placeholder="Wpisz godzinę zakończenia"/>
 				</div>
-				
+
 				<div class="form-group">
               		<p>Wybierz miejsce</p>
-						<input type="text" name="place_id" placeholder="Wybierz miesjce wydarzenia z listy"/>
+						<select name="place_id" placeholder="Wybierz miejsce wydarzenia z listy">
+							<?php foreach ($places as $place): ?>
+  							<option value="<?= $place->id_place ?>"><?= $place->name ?></option>
+							<?php endforeach; ?>
+						</select>
 				</div>
 				<div class="form-group ">
 					<input class="button-primary" type="submit" value="Wyślij">
@@ -47,6 +51,7 @@
 				</div>
 			</div>
 		</div>
+		<?= $create_place_form ?>
 <?php
   else:
     header('Location: '.base_url());

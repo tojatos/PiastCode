@@ -29,8 +29,11 @@ class Event extends MY_Controller
     }
     public function create_event_form()
     {
+        $this->load->model("Place_model");
+        $data['places'] = $this->Place_model->get_places();
+        $data['create_place_form'] = $this->loadContent('Place/create_place_form');
+        $view['content'] = $this->loadContent('Event/create_event_form', $data);
         $view['mainNav'] = $this->loadMainNav();
-        $view['content'] = $this->loadContent('Event/create_event_form');
         $this->showMainView($view);
     }
     public function ajax_create_event()

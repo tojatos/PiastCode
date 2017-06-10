@@ -88,6 +88,7 @@ $(function() {
 	sendPostDataOnSubmit('.change_password_form', 'UserPassword/ajax_changePassword', true);
 	sendPostDataOnSubmit('.create_event_form', 'Event/ajax_create_event');
 	sendPostDataOnSubmit('.create_category_form', 'Category/ajax_create_category');
+	sendPostDataOnSubmit('.create_place_form', 'Place/ajax_create_place');
 
 	/*
 	|--------------------------------------------------------------------------
