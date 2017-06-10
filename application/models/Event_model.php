@@ -26,7 +26,16 @@ class Event_model extends MY_Model
     public function get_events_data()
     {
         $this->db
-        ->select('*')
+        ->select(
+          EVENT_TABLE.'.id_'.EVENT_TABLE.' as event_id,'.
+          EVENT_TABLE.'.name as event_name,'.
+          EVENT_TABLE.'.description as event_description,'.
+          EVENT_TABLE.'.datetime_start as event_datetime_start,'.
+          EVENT_TABLE.'.datetime_end as event_datetime_end,'.
+          PLACE_TABLE.'.name as place_name,'.
+          PLACE_TABLE.'.address as place_address,'.
+          CATEGORY_TABLE.'.name as category_name,'
+        )
         ->from(EVENT_TABLE)
         ->join(PLACE_TABLE, PLACE_TABLE.".id_".PLACE_TABLE." = ".EVENT_TABLE.".fk_".PLACE_TABLE,'left')
         ->join(EVENT_CATEGORY_TABLE, EVENT_TABLE.".id_".EVENT_TABLE." = ".EVENT_CATEGORY_TABLE.".fk_".EVENT_TABLE,'left')
