@@ -10,3 +10,4 @@ $route['About'] = 'Main/About';
 $route['ForgottenPassword'] = 'UserPassword/showForgottenPasswordForm';
 $route['ChangePassword/(:any)'] = 'UserPassword/showChangePasswordForm/$1';
 $route['Event/Create'] = 'Event/create_event_form';
+$route['Event/(:num)'] = 'Event/show_single_event/$1';

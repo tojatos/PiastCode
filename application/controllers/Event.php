@@ -9,6 +9,12 @@ class Event extends MY_Controller
         $view['content'] = $this->loadContent('Event/index');
         $this->showMainView($view);
     }
+    public function show_single_event($id)
+    {
+      $view['mainNav'] = $this->loadMainNav();
+      $view['content'] = $this->loadContent('Event/single_event');
+      $this->showMainView($view);
+    }
     public function create_event_form()
     {
         $view['mainNav'] = $this->loadMainNav();
@@ -66,11 +72,5 @@ class Event extends MY_Controller
         'place_id' => [$d['place_id'], 100],
         ]);
 
-    }
-    public function get_events_data()
-    {
-      $this->load->model->Event_model;
-      $events_data = $this->Event_model->get_events_data();
-      return $events_data;
     }
 }
