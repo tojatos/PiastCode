@@ -5,7 +5,6 @@ class Event_model extends MY_Model
 {
     public function create_event($event_data)
     {
-        try {
             //$this->validate_event_data($event_data);
             $datetime_start = $event_data['date_start'].' '.$event_data['time_start'];
             $datetime_end = $event_data['date_end'].' '.$event_data['time_end'];
@@ -33,9 +32,7 @@ class Event_model extends MY_Model
                 $this->db->insert(EVENT_CATEGORY_TABLE, $insert_cat_data);
               }
             }
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
+            return $id_event;
     }
     public function get_events_data()
     {

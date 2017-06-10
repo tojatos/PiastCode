@@ -10,7 +10,7 @@
 	            </div>
 				<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2
 							col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-          <form class="create_event_form" method="post">
+          <form class="create_event_form" method="post" enctype="multipart/form-data">
 				<div class="form-group">
               		<p>Nazwa:</p>
 						<input type="text" name="name" placeholder="Wpisz nazwę"/>
@@ -50,7 +50,7 @@
 				</div>
 				<div class="form-group">
               		<p>Zdjęcie wydarzenia:</p>
-						<input type="file" name="pic" accept="image/*">
+						<input type="file" name="pic" >
 				</div>
 				<div class="form-group ">
 					<input class="button-primary" type="submit" value="Dodaj wydarzenie">

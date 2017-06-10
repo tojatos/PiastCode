@@ -52,6 +52,7 @@ class Event extends MY_Controller
               'place_id' => $this->input->post('place_id'),
               'category_ids' => $this->input->post('category_ids[]'),
             ];
+
             $this->validate_ajax_create_event($post_data);
 
             $this->load->model('Event_model');
@@ -68,10 +69,18 @@ class Event extends MY_Controller
               'category_ids' => $post_data['category_ids'],
               'creator' => $user_id,
             ];
-            $try = $this->Event_model->create_event($event_data);
+            $event_id = $this->Event_model->create_event($event_data);
 
-            if ($try != null) {
-                throw new Exception($try);
+            $config['upload_path']          = 'public/images/events/';
+            $config['allowed_types']        = 'gif|jpg|png|jpeg';
+            $config['max_size']             = 100;
+            $config['max_width']            = 1024;
+            $config['max_height']           = 768;
+            $config['file_name']            = "event".$event_id;
+            $this->load->library('upload', $config);
+            if(!$this->upload->do_upload('pic'))
+            {
+              echo "<h2>Nie udało się załadować zdjęcia.</h2><br>";
             }
 
             echo '<h2>Pomyślnie dodano wydarzenie.</h2><br>';

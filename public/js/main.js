@@ -50,6 +50,9 @@ function sendPostData(data, url) {
 		url: baseUrl + url,
 		type: 'POST',
 		data: data,
+		cache: false,
+			 contentType: false,
+			 processData: false,
 		success: function(serverResponse, refresh) {
 			showResponse(serverResponse, refresh);
 		},
@@ -86,11 +89,32 @@ $(function() {
 	sendPostDataOnSubmit('.register_form', 'Register/ajax_register');
 	sendPostDataOnSubmit('.forgotten_password_form', 'UserPassword/ajax_forgottenPassword', true);
 	sendPostDataOnSubmit('.change_password_form', 'UserPassword/ajax_changePassword', true);
-	sendPostDataOnSubmit('.create_event_form', 'Event/ajax_create_event');
+	//sendPostDataOnSubmit('.create_event_form', 'Event/ajax_create_event');
 	sendPostDataOnSubmit('.create_category_form', 'Category/ajax_create_category');
 	sendPostDataOnSubmit('.verify_event_form', 'Event/ajax_verify_event', true);
 	sendPostDataOnSubmit('.create_place_form', 'Place/ajax_create_place');
+	$(".create_event_form").submit(function(e){
+		e.preventDefault();
+	    var formData = new FormData($(this)[0]);
 
+	    $.ajax({
+	        url: baseUrl + 'Event/ajax_create_event',
+	        type: 'POST',
+	        data: formData,
+	        async: false,
+					success: function(serverResponse, refresh) {
+ 		 			showResponse(serverResponse, refresh);
+ 		 		},
+ 		 		error: function() {
+ 		 			showResponse('Błąd związany z wysyłaniem danych.<br>Sprawdź swoje połączenie internetowe.');
+ 		 		},
+	        cache: false,
+	        contentType: false,
+	        processData: false
+	    });
+
+	    return false;
+	});
 	/*
 	|--------------------------------------------------------------------------
 	| JqueryUI
