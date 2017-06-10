@@ -109,7 +109,6 @@ class Event extends MY_Controller
             $post_data = [
               'event_id' => $this->input->post('event_id'),
             ];
-            dump($post_data['event_id']);
             $this->validate_ajax_verify_event($post_data);
 
             $this->load->model('Event_model');
