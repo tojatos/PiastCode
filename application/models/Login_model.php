@@ -30,6 +30,11 @@ class Login_model extends MY_Model
       if(!password_verify($d['password'], $user->password)){
           throw new Exception('Nieprawidłowe dane logowania.<br>');
       }
+
+      if($user->is_admin==true)
+      {
+        $this->session->is_admin = true;
+      }
     }
     public function logout()
     {
