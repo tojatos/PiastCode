@@ -4,10 +4,10 @@
 <div class="event_filter">
     <div class="title">Filtruj:</div>
     <div class="formula">
-        <form action="/action_page.php">
-            <input type="checkbox" name="vehicle" value="Bike"> Kino
-            <input type="checkbox" name="vehicle" value="Car" checked> Teatr
-            <input type="checkbox" name="vehicle" value="Car" checked> Sport
+        <form action="">
+            <?php foreach ($category_data as $category): ?>
+                <input type="checkbox" name="category" value="<?=$category?>"> <?=$category=?>
+            <?php endforeach; ?>
             <input type="submit" value="Submit">
         </form>
     </div>
