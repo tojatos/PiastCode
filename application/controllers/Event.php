@@ -89,4 +89,33 @@ class Event extends MY_Controller
         ]);
 
     }
+
+    public function ajax_verify_event()
+    {
+        try {
+            $post_data = [
+              'event_id' => $this->input->post('event_id'),
+            ];
+            $this->validate_ajax_verify_event($post_data);
+
+            $this->load->model('Event_model');
+            $try = $this->Event_model->verify_event($post_data['event_id']);
+
+            if ($try != null) {
+                throw new Exception($try);
+            }
+
+            echo '<h2>Pomyślnie zweryfikowano wydarzenie.</h2><br>';
+        } catch (Exception $e) {
+            echo '<h2>Weryfikacja wydarzenia nie powiodło się:</h2><br>';
+            echo $e->getMessage();
+        }
+    }
+    private function validate_ajax_verify_event($d)
+    {
+        validateForm([
+        'event_id' => [$d['event_id'], 11]
+        ]);
+
+    }
 }

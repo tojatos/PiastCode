@@ -352,7 +352,7 @@ html {
             text-align: center;
         }
 
-        .login_form, .register_form, .create_event_form, .create_category_form{
+        .login_form, .register_form, .create_event_form, .create_category_form, .create_place_form{
             div{
                 padding: 5px;
             }
@@ -475,4 +475,12 @@ html {
     padding: 20px;
     color: #811;
     font-size: 24px;
+}
+
+#add_place_form{
+    display: none;
+}
+.add_place_form_toggle{
+    margin: 0 auto;
+    display: block;
 }
